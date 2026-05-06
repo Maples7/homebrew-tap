@@ -3,7 +3,7 @@ class Vch < Formula
   homepage "https://github.com/maples7/VibeChard"
   url "https://github.com/Maples7/VibeChard/archive/refs/tags/v0.1.0.tar.gz"
   version "0.1.0"
-  sha256 "bba5a5db8c65a0d14a6b9a039fae703a930404b04097490c0ac90d956c6d0b4e"
+  sha256 "9bb8b75114fc27e74a8a2347a07c9050bf5466b7ee0ade827f83215f45e08835"
   license "Apache-2.0"
 
   # Stable channel — populated by .github/workflows/release.yml on tag
