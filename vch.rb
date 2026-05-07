@@ -1,9 +1,9 @@
 class Vch < Formula
   desc "Per-task isolated worktrees for parallel Apple development with AI agents"
   homepage "https://github.com/maples7/VibeChard"
-  url "https://github.com/Maples7/VibeChard/archive/refs/tags/v0.1.3.tar.gz"
-  version "0.1.3"
-  sha256 "8d7ef251c98f175831d8d8a75220f9cae88b15e0a9f9cce123b4bacbce382557"
+  url "https://github.com/Maples7/VibeChard/archive/refs/tags/v0.2.0.tar.gz"
+  version "0.2.0"
+  sha256 "6f722fe4938eae8f596db0904a93fb879bc1267d5a8360400d582ba77bb10ef9"
   license "Apache-2.0"
 
   # Stable channel — populated by .github/workflows/release.yml on tag
