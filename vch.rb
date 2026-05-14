@@ -1,9 +1,9 @@
 class Vch < Formula
   desc "Per-task isolated worktrees for parallel Apple development with AI agents"
   homepage "https://github.com/maples7/VibeChard"
-  url "https://github.com/Maples7/VibeChard/archive/refs/tags/v0.8.0.tar.gz"
-  version "0.8.0"
-  sha256 "ea5ffde336b71ea55ad22f9a689ac659410f5464a7bf17c15012c6197cc7809d"
+  url "https://github.com/Maples7/VibeChard/archive/refs/tags/v0.8.1.tar.gz"
+  version "0.8.1"
+  sha256 "33cf06162efe441678a2d551e6ceb5ab2402039c359b6a85588ce5c8e71383f2"
   license "Apache-2.0"
 
   # Stable channel — populated by .github/workflows/release.yml on tag
@@ -32,6 +32,8 @@ class Vch < Formula
     # before `vch exec` has set up the per-task `.vch/bin` directory.
     libexec.install ".build/release/vch-xcodebuild-shim"
 
+    doc.install "docs/agent-runbook.md"
+
     # Bash, Zsh, Fish completions auto-generated from the
     # ArgumentParser tree. Standard Homebrew helper.
     generate_completions_from_executable(
@@ -48,6 +50,10 @@ class Vch < Formula
     # The shim must not leak into PATH.
     refute_path_exists bin/"vch-xcodebuild-shim"
     assert_path_exists libexec/"vch-xcodebuild-shim"
+
+    # Agent runbook is installed and discoverable through the CLI.
+    assert_path_exists doc/"agent-runbook.md"
+    assert_match (doc/"agent-runbook.md").to_s, shell_output("#{bin}/vch runbook")
 
     # Completion scripts were installed for every supported shell.
     assert_path_exists bash_completion/"vch"
