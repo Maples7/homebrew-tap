@@ -1,23 +1,23 @@
 class Vch < Formula
   desc "Per-task isolated worktrees for parallel Apple development with AI agents"
   homepage "https://github.com/maples7/VibeChard"
-  url "https://github.com/Maples7/VibeChard/archive/refs/tags/v1.2.0.tar.gz"
-  version "1.2.0"
-  sha256 "6bf08760dc34233909532122c212be39a7f8d51f4f3a23e7ac7179226ee0a5cf"
+  url "https://github.com/Maples7/VibeChard/archive/v1.2.1.tar.gz"
+  version "1.2.1"
+  sha256 "4a5bce0538f79cc41f9dc64ededd194afff59b53454ee30d5abe689e8032c024"
   license "Apache-2.0"
 
-  # Stable channel — populated by .github/workflows/release.yml on tag
-  # push. Until v0.1.0 is cut, install with `brew install --HEAD`.
-  # The release workflow uses mislav/bump-homebrew-formula-action to
-  # rewrite `url` / `sha256` / `version` in the tap repo. The
-  # `archive/refs/tags/<tag>.tar.gz` URL is the auto-generated source
-  # tarball GitHub publishes for every tag; the bump action both
-  # rewrites the URL prefix here and downloads it to compute sha256.
+  # Release template: the workflows fill in the source URL, version,
+  # checksum and Homebrew-generated bottle block before updating the tap.
 
   head "https://github.com/maples7/VibeChard.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/Maples7/VibeChard/releases/download/v1.2.1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "aa4efb87d71f23bd8c3e6ce700d59a5e038aea7cb3dfb40320491dd7706d99f2"
+    sha256 cellar: :any_skip_relocation, sequoia:      "1553ed9cd81b7451508a47532a1f1dbf2766d5f48802f2909fa7bf606c9def60"
+  end
+
   depends_on xcode: ["15.3", :build]
-  depends_on :macos
   depends_on macos: :ventura # macOS 13+ floor; matches Package.swift
 
   def install
