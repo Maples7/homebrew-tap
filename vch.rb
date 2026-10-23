@@ -1,9 +1,9 @@
 class Vch < Formula
   desc "Per-task isolated worktrees for parallel Apple development with AI agents"
   homepage "https://github.com/maples7/VibeChard"
-  url "https://github.com/Maples7/VibeChard/archive/v1.2.3.tar.gz"
-  version "1.2.3"
-  sha256 "e15b916e815d9ba4b2eba6a46ea083771f97a422884e53b3d2306b6a105da907"
+  url "https://github.com/Maples7/VibeChard/archive/v1.2.4.tar.gz"
+  version "1.2.4"
+  sha256 "3ae99c59869a605b79073f72b5841a23484bcf87191f61f43efb53a2cddc114f"
   license "Apache-2.0"
 
   # Release template: the workflows fill in the source URL, version,
@@ -12,9 +12,9 @@ class Vch < Formula
   head "https://github.com/maples7/VibeChard.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/Maples7/VibeChard/releases/download/v1.2.3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7273d5ed929e766f9d019749d047c5bea7aea29abc2b9738a95f7c4f21c3b136"
-    sha256 cellar: :any_skip_relocation, sequoia:      "19f2b4a1053949ba57f8db71b1477cbae3fdf6f886226b50ec284d99faae5e14"
+    root_url "https://github.com/Maples7/VibeChard/releases/download/v1.2.4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "11fd196d5b66067ada62cea2ca16842ae6792c297702c26e188940194f4e2fff"
+    sha256 cellar: :any_skip_relocation, sequoia:      "4e7fad3b9945ee5c941f5c768e40d079be09719a9cb01f142f369618c4a263d9"
   end
 
   depends_on xcode: ["15.3", :build]
